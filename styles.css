@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url('https://wallpapers.com/images/hd/tech-background-5heb0pzclwsag6ro.jpg'); /* Add the image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff; /* Text color to contrast with the space background */
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    position: relative;
+}
+
+.profile-header {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.profile {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #ffffff; /* White border */
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: scale(0.7);
+    animation: zoomIn 1.5s forwards;
+}
+
+@keyframes zoomIn {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 15px;
+}
+
+p {
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: fadeInText 1s forwards 1.2s;
+}
+
+@keyframes fadeInText {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Navigation Bar Styles */
+nav {
+    padding: 15px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links li {
+    margin: 0 20px;
+    transition: transform 0.3s ease;
+}
+
+.nav-links li:hover {
+    transform: translateY(-3px);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00bcd4; /* Light cyan on hover */
+}
+
+/* Main Section Styling */
+main {
+    padding: 40px 20px;
+}
+
+h2 {
+    color: #E0E0E0; /* Light gray for good contrast with dark gray */
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Adds subtle shadow for better readability */
+}
+
+/* Sections */
+.about, .skills, .contact {
+    padding: 30px;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s forwards;
+}
+
+.about {
+    animation-delay: 0.5s;
+}
+
+.skills {
+    animation-delay: 0.8s;
+}
+
+.contact {
+    animation-delay: 1.1s;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skills Section Styling */
+.skills ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.skills li {
+    background-color: #2575fc; /* Blue background */
+    color: white;
+    padding: 15px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.skills li:hover {
+    background-color: #00bcd4; /* Light cyan on hover */
+    transform: translateY(-5px);
+}
+
+/* Contact Section Styling */
+.contact a {
+    color: #00bcd4; /* Light cyan color */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.contact a:hover {
+    border-color: #00bcd4; /* Light cyan underline on hover */
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact input, .contact textarea {
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact input:focus, .contact textarea:focus {
+    border-color: #00bcd4; /* Light cyan border on focus */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #00bcd4; /* Light cyan background */
+    color: white;
+    margin-top: 60px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .skills ul {
+        flex-direction: column;
+    }
+    
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .profile {
+        width: 100px;
+        height: 100px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p, .nav-links a {
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 10px 0;
+    }
+
+    .nav-links li {
+        margin: 0 5px;
+    }
+
+    .profile {
+        width: 90px;
+        height: 90px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p, .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+}
+/* Contact Logo Styling */
+.contact-logo {
+    width: 30px; /* Adjust the size (bigger) */
+    height: 30px;
+    margin-right: 12px; /* Spacing between logo and text */
+    vertical-align: middle;
+}
+
+/* Contact Links Styling */
+.contact a {
+    display: inline-flex; /* Ensure it stays inline */
+    align-items: center; /* Vertically align icon and text */
+    text-decoration: none;
+    color: #ff5722; /* Changed to a bright orange (or choose any color) */
+    font-weight: bold;
+    font-size: 1.5rem; /* Increased font size */
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.contact a:hover {
+    border-color: #ff5722; /* Light cyan underline on hover (same color as text) */
+    color: #ffccbc; /* Light orange text on hover */
+}
+
+
+/* Contact Logo Styling */
+.contact-logo {
+    width: 20px; /* Adjust the size */
+    height: 20px;
+    margin-right: 10px; /* Spacing between logo and text */
+    vertical-align: middle;
+}
+
+/* Contact Links Styling */
+.contact a {
+    display: inline-flex; /* Ensure it stays inline */
+    align-items: center; /* Vertically align icon and text */
+    text-decoration: none;
+    color: #00bcd4;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+.contact a:hover {
+    border-color: #00bcd4; /* Light cyan underline on hover */
+}
